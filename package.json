@@ -19,10 +19,13 @@
   },
   "homepage": "https://github.com/AzeemAli14/MERN-CRUD#readme",
   "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "mongodb": "^5.7.0",
-    "mongoose": "^7.4.3",
+    "mongoose": "^5.2.8",
+    "mongoose-auto-increment": "^5.0.1",
     "nodemon": "^3.0.1"
   }
 }
