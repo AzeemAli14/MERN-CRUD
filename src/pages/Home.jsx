@@ -1,10 +1,26 @@
-import React from "react";
+import {React, useEffect, useState} from "react";
+import { getUsers } from "../services/api";
+import { useNavigate } from "react-router-dom";
+
 
 const Home = ({props}) => {
+  const [users, setUsers] = useState([]);
+  useEffect(() => {
+    getAllUsers();
+  }, []);
+
+  const getAllUsers = async () => {
+    let response = await getUsers();
+    setUsers(response.data);
+  };
+
+  const navigate = useNavigate();
   return (
     <div>
-      <div className="flex items-center justify-center min-h-screen from-gray-700 via-gray-800 to-gray-900 bg-gradient-to-br">
-        <div className="relative w-full group max-w-md min-w-0 mx-auto mt-6 mb-6 break-words bg-white border shadow-2xl dark:bg-gray-800 dark:border-gray-700 md:max-w-sm rounded-xl">
+      <div className="grid grid-cols-2 gap-1 items-center justify-center min-h-screen from-gray-700 via-gray-800 to-gray-900 bg-gradient-to-br">
+        {
+          users.map((user, index) => (
+            <div className="relative w-full group max-w-md min-w-0 mx-auto mt-6 mb-6 break-words bg-white border shadow-2xl dark:bg-gray-800 dark:border-gray-700 md:max-w-sm rounded-xl">
           <div className="pb-6">
             <div className="flex flex-wrap justify-center">
               <div className="flex justify-center w-full">
@@ -19,7 +35,7 @@ const Home = ({props}) => {
             </div>
             <div className="mt-20 text-center">
               <h3 className="mb-1 text-2xl font-bold leading-normal text-gray-700 dark:text-gray-300">
-                Ariel Cerda
+                {user.name}
               </h3>
               <div className="flex flex-row justify-center w-full mx-auto space-x-2 text-center">
                 <svg
@@ -35,18 +51,18 @@ const Home = ({props}) => {
                   ></path>
                 </svg>
                 <div className="text-sm font-bold tracking-wide text-gray-600 dark:text-gray-300 font-mono">
-                  Location
+                  {user.city}, {user.country}
                 </div>
               </div>
                 <div className="text-lg font-bold tracking-wide text-gray-600 dark:text-gray-300 font-mono">
-                    Designation
+                    {user.designation}
                 </div>
             </div>
             <div className="pt-6 mx-6 mt-6 text-center border-t border-gray-200 dark:border-gray-700/50">
               <div className="flex flex-wrap justify-center">
                 <div className="w-full px-6">
                   <p className="mb-4 font-light leading-relaxed text-gray-600 dark:text-gray-400">
-                    Your bio... <span className="cursor-pointer hover:text-amber-500">read more</span>
+                    Bio... <span onClick={() => navigate(`/view/${user.id}`)} className="cursor-pointer hover:text-amber-500">read more</span>
                   </p>
                 </div>
               </div>
@@ -63,6 +79,8 @@ const Home = ({props}) => {
             </div>
           </div>
         </div>
+          ))
+        }
       </div>
     </div>
   );

@@ -48,7 +48,7 @@ const NavBar = (props) => {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar component="nav">
+      <AppBar component="nav" position="static">
         <Toolbar>
           <IconButton
             color="inherit"
@@ -60,6 +60,8 @@ const NavBar = (props) => {
             <MenuIcon />
           </IconButton>
           <Typography
+            textAlign="center"
+            onClick={handleDrawerToggle}
             variant="h6"
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
