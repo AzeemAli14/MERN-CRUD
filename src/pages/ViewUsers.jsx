@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../components/Footer";
 
 const ViewUsers = () => {
   return (
@@ -138,6 +139,7 @@ const ViewUsers = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
