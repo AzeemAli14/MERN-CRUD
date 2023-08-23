@@ -17,23 +17,39 @@ const ViewUsers = () => {
                 >
                   <img
                     alt=""
-                    src="https://picsum.photos/50/50"
-                    className="flex self-center rounded-full h-[120px] mx-auto border-4 border-white -mt-6 shadow-lg align-center"
+                    src="https://avatars.githubusercontent.com/u/35036926?v=4"
+                    className="flex self-center rounded-full h-[200px] mx-auto border-4 border-white -mt-6 shadow-lg align-center"
                   />
                 </div>
               </div>
             </div>
             <div className="w-[65%]">
-              <div className="h-[75%] text-center ">
-                <p className="font-bold text-2xl pt-4 pb-2 text-gray-300"> Angry Pitbull Club </p>
-                <p className="px-10 py-2 mb-5 text-gray-300">
-                  A collection of 10,000 Angry Pitbulls. Angry Pitbull Club is a
-                  collection of 10,000 unique, digital Pitbull NFT collectibles
-                  that represent community...
-                </p>
+              <div className="h-[40%] ">
+                <div>
+                  <p className="font-bold text-2xl pt-4 pb-2 ml-8 text-amber-400">
+                    {" "}
+                    Bio:{" "}
+                  </p>
                 </div>
-                <div className="h-[25%]">
+                <p className="px-10 py-2 mb-5 text-center text-gray-300">
+                  An enthusiastic Web developer and Software Engineer. Having a
+                  keen interest in JavaScript frameworks such as React.Js and
+                  Next.Js and in MERN Stack Development.
+                </p>
+              </div>
+              <div className="h-[35%]">
                 <div className="pt-6 mx-6 mt-6 text-center border-t border-gray-200 dark:border-gray-700/50"></div>
+                <p className="font-bold italic text-xl pt-4 pb-2 text-center text-amber-400">
+                  {" "}
+                  Azeem Ali{" "}
+                </p>
+                <p className="font-bold italic text-lg font-serif	 pt-4 pb-2 text-center text-gray-300">
+                  {" "}
+                  Software Engineer - React.Js{" "}
+                </p>
+              </div>
+              <div className="h-[25%]">
+                <div className="pt-6 mx-6 text-center border-t border-gray-200 dark:border-gray-700/50"></div>
                 <div className="w-full mb-5">
                   <div className="flex justify-center pt-8 pb-3 lg:pt-4">
                     <div className="flex space-x-[40px]">
@@ -131,8 +147,8 @@ const ViewUsers = () => {
                           <path d="M115 15H25A25 25 0 000 40v60a25 25 0 0025 25h90a25 25 0 0025-25V40a25 25 0 00-25-25zM95.71 76.25L63.58 94.1A7.15 7.15 0 0153 87.85v-35.7a7.15 7.15 0 0110.6-6.26l32.11 17.86a7.15 7.15 0 010 12.5z"></path>
                         </svg>
                       </a>
+                    </div>
                   </div>
-                </div>
                 </div>
               </div>
             </div>

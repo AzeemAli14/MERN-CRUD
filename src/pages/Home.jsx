@@ -26,7 +26,7 @@ const Home = ({ props }) => {
                   <div className="flex justify-center w-full">
                     <div className="relative">
                       <img
-                        src="https://source.unsplash.com/jmURdhtm7Ng/120x120"
+                        src="https://e7.pngegg.com/pngimages/799/987/png-clipart-computer-icons-avatar-icon-design-avatar-heroes-computer-wallpaper-thumbnail.png"
                         alt=""
                         className="dark:shadow-xl border-white dark:border-gray-800 rounded-full align-middle border-8 absolute -m-16 -ml-18 lg:-ml-16 max-w-[150px]"
                       />
@@ -65,7 +65,7 @@ const Home = ({ props }) => {
                         Bio...{" "}
                         <span
                           onClick={() => navigate(`/view/${user.id}`)}
-                          className="cursor-pointer hover:text-amber-500"
+                          className="cursor-pointer text-amber-500 hover:text-amber-300"
                         >
                           read more
                         </span>

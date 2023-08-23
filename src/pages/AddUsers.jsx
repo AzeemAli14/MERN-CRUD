@@ -1,24 +1,24 @@
 import React from "react";
 import { addUser } from "../services/api";
 import { useNavigate } from "react-router-dom";
+import Footer from "../components/Footer";
 const AddUsers = () => {
-
   const defaultValues = {
     name: "",
     designation: "",
     city: "",
     country: "",
     bio: "",
-  }
+  };
 
   const [values, setValues] = React.useState(defaultValues);
 
-  const onSubmit = async(e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
     console.log(values);
 
-    await addUser(values)
+    await addUser(values);
 
     navigation("/");
   };
@@ -29,16 +29,16 @@ const AddUsers = () => {
     console.log(e.target.name, e.target.value);
     setValues({
       ...values,
-      [e.target.name]: e.target.value
-    })
-  }
+      [e.target.name]: e.target.value,
+    });
+  };
 
   return (
     <div>
       <div className="flex items-center justify-center min-h-screen from-gray-700 via-gray-800 to-gray-900 bg-gradient-to-br">
-        <div className="relative w-[50%] mt-20 mx-auto break-words bg-white border shadow-2xl dark:bg-gray-800 dark:border-gray-700 rounded-xl">
+        <div className="relative w-[50%] mt-20 mb-8 mx-auto break-words bg-white border shadow-2xl dark:bg-gray-800 dark:border-gray-700 rounded-xl">
           <form className="" onSubmit={(e) => onSubmit(e)}>
-          {/* <form className=""> */}
+            {/* <form className=""> */}
             <div className="rounded-xl shadow-xl p-4 px-4 md:p-8">
               <div className="text-center">
                 <div className="pt-6 mx-6 text-center border-t border-gray-200 dark:border-gray-700/50"></div>
@@ -190,6 +190,7 @@ const AddUsers = () => {
           </form>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

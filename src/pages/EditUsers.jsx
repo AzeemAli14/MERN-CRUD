@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../components/Footer";
 
 const EditUsers = () => {
   return (
@@ -152,6 +153,7 @@ const EditUsers = () => {
           </form>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };
