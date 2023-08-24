@@ -24,6 +24,35 @@ export const getUsers = async() => {
     }
 }
 
-// export default axios.create({
-//     baseURL: 'http://localhost:8000'
-// })
+export const viewUser = async(id) => {
+    try 
+    {
+        return await axios.get(`${baseURL}/view/${id}`)
+    }
+    catch(error)
+    {
+        console.log("Error while getting user: ", error)
+    }
+}
+
+export const editUser = async(id) => {
+    try 
+    {
+        return await axios.get(`${baseURL}/${id}`)
+    }
+    catch(error)
+    {
+        console.log("Error while editing user: ", error)
+    }
+}
+
+export const deleteUser = async(id) => {
+    try 
+    {
+        return await axios.delete(`${baseURL}/delete/${id}`)
+    }
+    catch(error)
+    {
+        console.log("Error while deleting user: ", error)
+    }
+}

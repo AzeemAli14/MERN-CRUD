@@ -1,4 +1,4 @@
-import React from "react";
+import {useState} from "react";
 import { addUser } from "../services/api";
 import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
@@ -11,7 +11,7 @@ const AddUsers = () => {
     bio: "",
   };
 
-  const [values, setValues] = React.useState(defaultValues);
+  const [values, setValues] = useState(defaultValues);
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -43,10 +43,10 @@ const AddUsers = () => {
               <div className="text-center">
                 <div className="pt-6 mx-6 text-center border-t border-gray-200 dark:border-gray-700/50"></div>
                 <p className="font-bold text-2xl text-gray-300">
-                  Add Personal Details
+                  Edit Personal Details
                 </p>
                 <p className="text-cyan-500 text-lg">
-                  Please fill out all the fields.
+                  Please edit required fields.
                 </p>
                 <div className="pt-6 mx-6 text-center border-t border-gray-200 dark:border-gray-700/50"></div>
               </div>
@@ -70,7 +70,7 @@ const AddUsers = () => {
                       </svg>
                     </span>
                   </div>
-                  <div className="rounded-l-lg p-4 bg-gray-800 flex flex-col justify-center items-center">
+                  <div className="rounded-l-lg p-4 flex flex-col justify-center items-center">
                     <label
                       className="cursor-pointer hover:opacity-80 inline-flex items-center shadow-md px-2 py-2 bg-gray-700 text-gray-50 border border-transparent
         rounded-md font-semibold text-xs uppercase tracking-widest hover:bg-gray-500 active:bg-gray-700 focus:outline-none 
@@ -133,7 +133,7 @@ const AddUsers = () => {
                         type="address"
                         name="city"
                         id="city"
-                        className="text-gray-300 dark:text-gray-800 h-10 border mt-1 rounded px-4 w-full bg-gray-800"
+                        className="text-gray-300 h-10 border mt-1 rounded px-4 w-full bg-gray-800"
                         value={values.city}
                         placeholder="City"
                         onChange={(e) => onInputChange(e)}
@@ -148,7 +148,7 @@ const AddUsers = () => {
                         type="address"
                         name="country"
                         id="country"
-                        className="text-gray-300 dark:text-gray-800 h-10 border mt-1 rounded px-4 w-full bg-gray-800"
+                        className="text-gray-300 h-10 border mt-1 rounded px-4 w-full bg-gray-800"
                         value={values.country}
                         placeholder="Country"
                         onChange={(e) => onInputChange(e)}
@@ -165,7 +165,7 @@ const AddUsers = () => {
                         name="bio"
                         id="bio"
                         rows="8"
-                        className="text-gray-300 dark:text-gray-800 h-40 border mt-1 rounded px-4 w-full bg-gray-800 pt-3"
+                        className="text-gray-300 h-40 border mt-1 rounded px-4 w-full bg-gray-800 pt-3"
                         value={values.bio}
                         placeholder="Your bio here ... "
                         onChange={(e) => onInputChange(e)}
