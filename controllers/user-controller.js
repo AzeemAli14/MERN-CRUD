@@ -26,3 +26,18 @@ export const getUsers = async(request, response) => {
         response.status(401).json({message: error.message})
     }
 }
+
+export const editUser = async(request, response) => {
+    console.log(request.params.id);
+    const id = request.params.id;
+    try 
+    {
+        const user = await UserModel.find({ id: id });
+        // const user = await UserModel.findById(request.params.id);
+        response.status(200).json(user)
+    }
+    catch(error)
+    {
+        response.status(401).json({message: error.message})
+    }
+}
