@@ -3,25 +3,60 @@ import { getUsers } from "../services/api";
 import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
 import ErrorPage from "../components/ErrorPage";
+import { ToastContainer, toast } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
 
 const Home = ({ props }) => {
+  
   const [users, setUsers] = useState([]);
+  
   useEffect(() => {
     getAllUsers();
+    // console.log({useEffect: users});
+    if (users.length > 0) {
+      
+    }
+    else {
+      
+    }
   }, []);
 
   const getAllUsers = async () => {
     let response = await getUsers();
     try {
       setUsers(response.data);
+      toast.success("Data Successfully Retrieved!", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+      console.log(response.data);
     } catch (error) {
-      console.log({ message: error.meesage });
+      toast.error({ message: error.message }, {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+      console.log({ message: error.message });
     }
   };
-
+  
   const navigate = useNavigate();
+  
   return (
-    <div>
+    <div className="h-screen w-screen">
+      <ToastContainer/>
       {users ? (
         <>
           <div className="items-center justify-center min-h-screen from-gray-700 via-gray-800 to-gray-900 bg-gradient-to-br">

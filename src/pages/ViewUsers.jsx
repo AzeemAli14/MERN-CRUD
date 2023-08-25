@@ -3,17 +3,15 @@ import Footer from "../components/Footer";
 import { FaTrash, FaPen } from "react-icons/fa6";
 import { useNavigate, useParams } from "react-router-dom";
 import { editUser } from "../services/api";
+import { ToastContainer, toast } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
 
 const ViewUsers = ({props}) => {
 
-  const navigation = useNavigate();
-  const penClicked = () => {
-    navigation("/edit");
-  };
+  const [values, setValues] = useState({});
 
-  const trashClicked = () => {
-    console.log("trash clicked");
-  };
+  const navigation = useNavigate();
 
   useEffect(() => {
     loadUser();
@@ -21,23 +19,47 @@ const ViewUsers = ({props}) => {
 
   const {id} = useParams();
 
+  const penClicked = () => {
+    navigation(`/edit/${id}`);
+  };
+
+  const trashClicked = () => {
+    console.log("trash clicked");
+  };
+
   const loadUser = async () => {
     let response = await editUser(id);
-    let data = JSON.stringify(response.data)
+    let data = response.data[0]
     try {
-      console.log(data.name);
+      setValues({...data});
+      toast.success("Data Successfully Retrieved!", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
     }
     catch (error) {
-      console.log(error);
+      toast.error({ message: error.message }, {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+      console.log({message: error.message});
     }
-    // try {
-    //   setValues(response.data);
-    // } catch (error) {
-    //   console.log(error);
-    // }
   }
   return (
-    <div>
+    <div className="h-screen w-screen">
+      <ToastContainer/>
       <div className="flex items-center justify-center min-h-screen from-gray-700 via-gray-800 to-gray-900 bg-gradient-to-br">
         <div className="relative w-[50%] mx-auto mt-6 break-words bg-white border shadow-2xl dark:bg-gray-800 dark:border-gray-700 rounded-xl">
           <div className="flex flex-row">
@@ -46,7 +68,7 @@ const ViewUsers = ({props}) => {
                 <div
                   className="justify-center flex bg-cover h-[450px] bg-center bg-no-repeat"
                   style={{
-                    backgroundImage: "url(https://picsum.photos/500/300)",
+                    backgroundImage: "url(https://picsum.photos/500/300/?blur=10)",
                   }}
                 >
                   <img
@@ -70,21 +92,17 @@ const ViewUsers = ({props}) => {
                     Bio:{" "}
                   </p>
                 </div>
-                <p className="px-10 py-2 mb-5 text-center text-gray-300">
-                  An enthusiastic Web developer and Software Engineer. Having a
-                  keen interest in JavaScript frameworks such as React.Js and
-                  Next.Js and in MERN Stack Development.
+                <p className="px-10 py-2 mb-5 h-8 text-center text-gray-300">
+                  {values.bio}
                 </p>
               </div>
               <div className="h-[35%]">
                 <div className="pt-6 mx-6 mt-6 text-center border-t border-gray-200 dark:border-gray-700/50"></div>
                 <p className="font-bold italic text-xl pt-4 pb-2 text-center text-amber-400">
-                  {" "}
-                  Azeem Ali{" "}
+                  {values.name}
                 </p>
                 <p className="font-bold italic text-lg font-serif	 pt-4 pb-2 text-center text-gray-300">
-                  {" "}
-                  Software Engineer - React.Js{" "}
+                  {values.designation}
                 </p>
               </div>
               <div className="h-[25%]">
