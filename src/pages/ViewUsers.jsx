@@ -15,7 +15,7 @@ const ViewUsers = ({props}) => {
 
   useEffect(() => {
     loadUser();
-  })
+  }, []);
 
   const {id} = useParams();
 
