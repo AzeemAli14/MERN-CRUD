@@ -15,7 +15,16 @@ const Home = ({ props }) => {
     getAllUsers();
     // console.log({useEffect: users});
     if (users.length > 0) {
-      
+      toast.success("Data Successfully Retrieved!", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
     }
     else {
       
@@ -26,7 +35,7 @@ const Home = ({ props }) => {
     let response = await getUsers();
     try {
       setUsers(response.data);
-      toast.success("Data Successfully Retrieved!", {
+      toast.pending("Data Retriving!", {
         position: "top-center",
         autoClose: 2000,
         hideProgressBar: false,
@@ -55,7 +64,7 @@ const Home = ({ props }) => {
   const navigate = useNavigate();
   
   return (
-    <div className="h-screen w-screen">
+    <div className="h-screen w-full">
       <ToastContainer/>
       {users ? (
         <>
