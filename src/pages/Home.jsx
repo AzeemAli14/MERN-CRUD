@@ -33,6 +33,7 @@ const Home = ({ props }) => {
 
   const getAllUsers = async () => {
     let response = await getUsers();
+    console.log("response: ", response);
     try {
       setUsers(response.data);
       toast.pending("Data Retriving!", {
@@ -57,7 +58,7 @@ const Home = ({ props }) => {
         progress: undefined,
         theme: "dark",
       });
-      console.log({ message: error.message });
+      console.log("Error: ", error);
     }
   };
   

@@ -3,25 +3,25 @@ import React from "react";
 const Footer = () => {
   return (
     <div>
-      <div class="bg-gradient-to-r from-gray-100 via-[#bce1ff] to-gray-100">
-        <div class="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
-          <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+      <div className="bg-gradient-to-r from-gray-100 via-[#bce1ff] to-gray-100">
+        <div className="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
             <div>
               MERN CRUD
-              <p class="max-w-xs mt-4 text-sm text-gray-600">
+              <p className="max-w-xs mt-4 text-sm text-gray-600">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Voluptas, accusantium.
               </p>
-              <div class="flex mt-8 space-x-6 text-gray-600">
+              <div className="flex mt-8 space-x-6 text-gray-600">
                 <a
-                  class="hover:opacity-75"
-                  href
+                  className="hover:opacity-75"
+                  href="true"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <span class="sr-only"> Facebook </span>
+                  <span className="sr-only"> Facebook </span>
                   <svg
-                    class="w-6 h-6"
+                    className="w-6 h-6"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -34,14 +34,14 @@ const Footer = () => {
                   </svg>
                 </a>
                 <a
-                  class="hover:opacity-75"
-                  href
+                  className="hover:opacity-75"
+                  href="true"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <span class="sr-only"> Instagram </span>
+                  <span className="sr-only"> Instagram </span>
                   <svg
-                    class="w-6 h-6"
+                    className="w-6 h-6"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -54,14 +54,14 @@ const Footer = () => {
                   </svg>
                 </a>
                 <a
-                  class="hover:opacity-75"
-                  href
+                  className="hover:opacity-75"
+                  href="true"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <span class="sr-only"> Twitter </span>
+                  <span className="sr-only"> Twitter </span>
                   <svg
-                    class="w-6 h-6"
+                    className="w-6 h-6"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -70,14 +70,14 @@ const Footer = () => {
                   </svg>
                 </a>
                 <a
-                  class="hover:opacity-75"
-                  href
+                  className="hover:opacity-75"
+                  href="true"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <span class="sr-only"> GitHub </span>
+                  <span className="sr-only"> GitHub </span>
                   <svg
-                    class="w-6 h-6"
+                    className="w-6 h-6"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -90,14 +90,14 @@ const Footer = () => {
                   </svg>
                 </a>
                 <a
-                  class="hover:opacity-75"
-                  href
+                  className="hover:opacity-75"
+                  href="true"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <span class="sr-only"> Dribbble </span>
+                  <span className="sr-only"> Dribbble </span>
                   <svg
-                    class="w-6 h-6"
+                    className="w-6 h-6"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -111,86 +111,86 @@ const Footer = () => {
                 </a>
               </div>
             </div>
-            <div class="grid grid-cols-1 gap-8 lg:col-span-2 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid grid-cols-1 gap-8 lg:col-span-2 sm:grid-cols-2 lg:grid-cols-4">
               <div>
-                <p class="font-medium">Company</p>
-                <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
-                  <a class="hover:opacity-75" href>
+                <p className="font-medium">Company</p>
+                <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
+                  <a className="hover:opacity-75" href="true">
                     {" "}
                     About{" "}
                   </a>
-                  <a class="hover:opacity-75" href>
+                  <a className="hover:opacity-75" href="true">
                     {" "}
                     Meet the Team{" "}
                   </a>
-                  <a class="hover:opacity-75" href>
+                  <a className="hover:opacity-75" href="true">
                     {" "}
                     History{" "}
                   </a>
-                  <a class="hover:opacity-75" href>
+                  <a className="hover:opacity-75" href="true">
                     {" "}
                     Careers{" "}
                   </a>
                 </nav>
               </div>
               <div>
-                <p class="font-medium">Services</p>
-                <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
-                  <a class="hover:opacity-75" href>
+                <p className="font-medium">Services</p>
+                <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
+                  <a className="hover:opacity-75" href="true">
                     {" "}
                     1on1 Coaching{" "}
                   </a>
-                  <a class="hover:opacity-75" href>
+                  <a className="hover:opacity-75" href="true">
                     {" "}
                     Company Review{" "}
                   </a>
-                  <a class="hover:opacity-75" href>
+                  <a className="hover:opacity-75" href="true">
                     {" "}
                     Accounts Review{" "}
                   </a>
-                  <a class="hover:opacity-75" href>
+                  <a className="hover:opacity-75" href="true">
                     {" "}
                     HR Consulting{" "}
                   </a>
-                  <a class="hover:opacity-75" href>
+                  <a className="hover:opacity-75" href="true">
                     {" "}
                     SEO Optimisation{" "}
                   </a>
                 </nav>
               </div>
               <div>
-                <p class="font-medium">Helpful Links</p>
-                <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
-                  <a class="hover:opacity-75" href>
+                <p className="font-medium">Helpful Links</p>
+                <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
+                  <a className="hover:opacity-75" href="true">
                     {" "}
                     Contact{" "}
                   </a>
-                  <a class="hover:opacity-75" href>
+                  <a className="hover:opacity-75" href="true">
                     {" "}
                     FAQs{" "}
                   </a>
-                  <a class="hover:opacity-75" href>
+                  <a className="hover:opacity-75" href="true">
                     {" "}
                     Live Chat{" "}
                   </a>
                 </nav>
               </div>
               <div>
-                <p class="font-medium">Legal</p>
-                <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
-                  <a class="hover:opacity-75" href>
+                <p className="font-medium">Legal</p>
+                <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
+                  <a className="hover:opacity-75" href="true">
                     {" "}
                     Privacy Policy{" "}
                   </a>
-                  <a class="hover:opacity-75" href>
+                  <a className="hover:opacity-75" href="true">
                     {" "}
                     Terms &amp; Conditions{" "}
                   </a>
-                  <a class="hover:opacity-75" href>
+                  <a className="hover:opacity-75" href="true">
                     {" "}
                     Returns Policy{" "}
                   </a>
-                  <a class="hover:opacity-75" href>
+                  <a className="hover:opacity-75" href="true">
                     {" "}
                     Accessibility{" "}
                   </a>
@@ -198,7 +198,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <p class="mt-8 text-xs text-gray-800">© 2023 Traxim Technologies</p>
+          <p className="mt-8 text-xs text-gray-800">© 2023 AZ Technologies</p>
         </div>
       </div>
     </div>

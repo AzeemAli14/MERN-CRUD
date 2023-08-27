@@ -35,7 +35,7 @@ export const viewUser = async(id) => {
     }
 }
 
-export const editUser = async(id) => {
+export const getUser = async(id) => {
     try 
     {
         return await axios.get(`${baseURL}/${id}`)
@@ -46,10 +46,21 @@ export const editUser = async(id) => {
     }
 }
 
+export const editUser = async(user, id) => {
+    try 
+    {
+        return await axios.put(`${baseURL}/${id}`, user)
+    }
+    catch(error)
+    {
+        console.log("Error while editing user: ", error)
+    }
+}
+
 export const deleteUser = async(id) => {
     try 
     {
-        return await axios.delete(`${baseURL}/delete/${id}`)
+        return await axios.delete(`${baseURL}/${id}`)
     }
     catch(error)
     {

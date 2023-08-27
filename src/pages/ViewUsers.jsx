@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Footer from "../components/Footer";
 import { FaTrash, FaPen } from "react-icons/fa6";
 import { useNavigate, useParams } from "react-router-dom";
-import { editUser } from "../services/api";
+import { deleteUser, getUser } from "../services/api";
 import { ToastContainer, toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
@@ -23,14 +23,16 @@ const ViewUsers = ({props}) => {
     navigation(`/edit/${id}`);
   };
 
-  const trashClicked = () => {
-    console.log("trash clicked");
+  const trashClicked = async() => {
+    await deleteUser(id);
+    navigation("/");
   };
 
   const loadUser = async () => {
-    let response = await editUser(id);
+    let response = await getUser(id);
     let data = response.data[0]
     try {
+      console.log("data", data);
       setValues({...data});
       toast.success("Data Successfully Retrieved!", {
         position: "top-center",
@@ -192,7 +194,7 @@ const ViewUsers = ({props}) => {
                           className="p-1 -m-1 text-gray-400 hover:text-amber-500 focus:outline-none focus-visible:ring-2 ring-primary"
                           href="https://www.youtube.com/channel/UCWip2TrjNMXb0kg6LWbsNzw?sub_confirmation=1"
                           rel="noopener"
-                          ariaLabel="Ariel Cerda on Youtube"
+                          aria-label="Ariel Cerda on Youtube"
                           target="blank"
                           title="Youtube"
                         >

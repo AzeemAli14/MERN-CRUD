@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { addUser, editUser } from "../services/api";
+import { getUser, editUser } from "../services/api";
 import { useNavigate, useParams } from "react-router-dom";
 import Footer from "../components/Footer";
 const EditUsers = () => {
+  
   const defaultValues = {
     name: "",
     designation: "",
@@ -13,35 +14,36 @@ const EditUsers = () => {
 
   const [values, setValues] = useState(defaultValues);
 
-  const onSubmit = async (e) => {
-    e.preventDefault();
-    const data = new FormData(e.currentTarget);
-    console.log(values);
-
-    await addUser(values);
-
-    navigation("/");
-  };
-
   useEffect(() => {
     loadUser();
-  });
+  }, []);
 
   const { id } = useParams();
 
   const loadUser = async () => {
-    let response = await editUser(id);
+    let response = await getUser(id);
+    let data = response.data[0];
     try {
-      setValues(response.data);
+      console.log("data", data);
+      setValues({ ...data });
     } catch (error) {
-      console.log(error);
+      console.log(error); 
     }
+  };
+
+  const onSubmitValue = async (e) => {
+    e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    console.log(values);
+
+    await editUser(values, id);
+
+    navigation("/");
   };
 
   const navigation = useNavigate();
 
   const onInputChange = (e) => {
-    console.log(e.target.name, e.target.value);
     setValues({
       ...values,
       [e.target.name]: e.target.value,
@@ -52,7 +54,7 @@ const EditUsers = () => {
     <div>
       <div className="flex items-center justify-center min-h-screen from-gray-700 via-gray-800 to-gray-900 bg-gradient-to-br">
         <div className="relative w-[50%] mt-20 mb-8 mx-auto break-words bg-white border shadow-2xl dark:bg-gray-800 dark:border-gray-700 rounded-xl">
-          <form className="" onSubmit={(e) => onSubmit(e)}>
+          <form className="" onSubmit={(e) => onSubmitValue(e)}>
             {/* <form className=""> */}
             <div className="rounded-xl shadow-xl p-4 px-4 md:p-8">
               <div className="text-center">
