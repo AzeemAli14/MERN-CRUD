@@ -7,7 +7,7 @@ export const addUser = async(request, response) => {
     try 
     {
         await userModel.save();
-        response.status(201).json(userModel)
+        response.status(200).json(userModel)
     }
     catch(error)
     {
@@ -27,14 +27,43 @@ export const getUsers = async(request, response) => {
     }
 }
 
-export const editUser = async(request, response) => {
-    console.log(request.params.id);
+export const getUser = async(request, response) => {
+    // console.log(request.params.id);
     const id = request.params.id;
     try 
     {
-        const user = await UserModel.find({ id: id });
+        const user = await UserModel.find({ id: request.params.id });
         // const user = await UserModel.findById(request.params.id);
         response.status(200).json(user)
+    }
+    catch(error)
+    {
+        response.status(401).json({message: error.message})
+    }
+}
+
+export const editUser = async(request, response) => {
+    const id = request.params.id;
+    const user = request.body;
+    const editUser = new UserModel(user)
+    try 
+    {
+        // const updatedUser = await UserModel.findByIdAndUpdate(id, user, { new: true });
+        await UserModel.updateOne({id: id}, editUser);
+        response.status(200).json(editUser)
+    }
+    catch(error)
+    {
+        response.status(401).json({message: error.message})
+    }
+}
+
+export const deleteUser = async(request, response) => {
+    const id = request.params.id;
+    try 
+    {
+        const deletedUser = await UserModel.deleteOne({id: id});
+        response.status(200).json(deletedUser)
     }
     catch(error)
     {
