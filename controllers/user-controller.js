@@ -11,7 +11,7 @@ export const addUser = async(request, response) => {
     }
     catch(error)
     {
-        response.status(401).json({message: error.message})
+        response.status(401).json(error)
     }
 }
 
@@ -23,7 +23,7 @@ export const getUsers = async(request, response) => {
     }
     catch(error)
     {
-        response.status(401).json({message: error.message})
+        response.status(401).json(error)
     }
 }
 
@@ -38,7 +38,7 @@ export const getUser = async(request, response) => {
     }
     catch(error)
     {
-        response.status(401).json({message: error.message})
+        response.status(401).json(error)
     }
 }
 
@@ -54,7 +54,7 @@ export const editUser = async(request, response) => {
     }
     catch(error)
     {
-        response.status(401).json({message: error.message})
+        response.status(401).json(error)
     }
 }
 
@@ -67,6 +67,6 @@ export const deleteUser = async(request, response) => {
     }
     catch(error)
     {
-        response.status(401).json({message: error.message})
+        response.status(401).json(error)
     }
 }

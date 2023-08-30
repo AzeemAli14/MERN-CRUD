@@ -12,9 +12,6 @@ const ConnectionDB = async(userName, password) => {
             useUnifiedTopology: true,
         });
         console.log('MongoDB connected');
-        // mongoose.connection.on('connected', () => {
-        //     console.log('MongoDB connected');
-        // });
     }
     catch (error) {
         console.log(error);

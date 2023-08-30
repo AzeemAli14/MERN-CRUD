@@ -23,5 +23,5 @@ const password = process.env.DB_PASSWORD;
 ConnectionDB(userName, password);
 
 app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`);
+    console.log(`CRUD-App is running at http://localhost:${port}`);
 })
