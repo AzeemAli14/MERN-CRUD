@@ -1,7 +1,10 @@
-import {useState} from "react";
+import { useState } from "react";
 import { addUser } from "../services/api";
 import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const AddUsers = () => {
   const defaultValues = {
     name: "",
@@ -18,9 +21,25 @@ const AddUsers = () => {
     const data = new FormData(e.currentTarget);
     console.log(values);
 
-    await addUser(values);
+    try {
+      await addUser(values);
+      toast.success("Data Submitted Successfully!", {
+        position: "top-center",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+      setTimeout(() => {
+        navigation("/");  
+      }, 2000);
 
-    navigation("/");
+    } catch (error) {
+      console.log("Error: ", error);
+    }
   };
 
   const navigation = useNavigate();
@@ -43,10 +62,10 @@ const AddUsers = () => {
               <div className="text-center">
                 <div className="pt-6 mx-6 text-center border-t border-gray-200 dark:border-gray-700/50"></div>
                 <p className="font-bold text-2xl text-gray-300">
-                  Edit Personal Details
+                  Add Personal Details
                 </p>
                 <p className="text-cyan-500 text-lg">
-                  Please edit required fields.
+                  Please fill required fields.
                 </p>
                 <div className="pt-6 mx-6 text-center border-t border-gray-200 dark:border-gray-700/50"></div>
               </div>

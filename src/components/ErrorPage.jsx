@@ -16,7 +16,7 @@ const ErrorPage = () => {
               <g clip-path="url(#clip0)">
                 <path
                   d="M317.524 379C488.625 379 627.33 368.857 627.33 356.346C627.33 343.834 488.625 333.692 317.524 333.692C146.423 333.692 7.71875 343.834 7.71875 356.346C7.71875 368.857 146.423 379 317.524 379Z"
-                  fill="#F2F2F2"
+                  fill="#1f5156"
                 />
                 <path
                   d="M305.65 108.342C255.175 108.342 218.934 144.112 218.934 227.575C218.934 322.166 255.175 347.205 305.65 347.205C356.126 347.205 394.526 319.781 394.526 227.575C394.526 129.009 356.126 108.342 305.65 108.342ZM305.982 315.807C271.021 315.807 252.757 293.152 252.757 227.636C252.757 169.827 271.769 139.342 306.73 139.342C341.691 139.342 360.703 159.367 360.703 227.636C360.703 291.5 340.943 315.807 305.982 315.807Z"
@@ -270,7 +270,7 @@ const ErrorPage = () => {
           </p>
           <a
             href="/"
-            className="bg-transparent hover:bg-yellow-300 text-yellow-300 hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border border-yellow-300 hover:border-transparent"
+            className="bg-transparent hover:bg-yellow-300 text-yellow-300 hover:text-black rounded shadow hover:shadow-lg py-2 px-4 border border-yellow-300 hover:border-transparent"
           >
             Retry
           </a>
