@@ -61,10 +61,9 @@ const Home = ({ props }) => {
             <div className="mx-8 grid grid-flow-row gap-8 text-neutral-600 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {/* <CardSkeleton /> */}
               {users.map((user, index) => (
-                <div key={index} className=" h-3/4 md:h-1/2 w-3/4 relative max-w-8xl">
+                <div key={index} className=" h-3/4 md:h-1/2 w-full relative max-w-8xl">
                   <div className="absolute top-28 h-full w-full bg-gradient-to-r from-blue-500 to-teal-500 transform scale-[1.00] bg-red-500 rounded-full blur-3xl" />
-                  <div className="relative w-full group max-w-md min-w-0 mx-auto mt-20 break-words bg-white border shadow-2xl dark:bg-gray-800 dark:border-gray-700 md:max-w-sm rounded-xl"
-                  >
+                  <div className="relative w-full group max-w-md min-w-0 mx-auto mt-20 break-words bg-white border shadow-2xl dark:bg-gray-800 dark:border-gray-700 md:max-w-sm rounded-xl">
                     <div className="pb-6">
                       <div className="flex flex-wrap justify-center">
                         <div className="flex justify-center w-full">
@@ -72,7 +71,7 @@ const Home = ({ props }) => {
                             <img
                               src="https://e7.pngegg.com/pngimages/799/987/png-clipart-computer-icons-avatar-icon-design-avatar-heroes-computer-wallpaper-thumbnail.png"
                               alt=""
-                              className="dark:shadow-xl border-white dark:border-gray-800 rounded-full align-middle border-8 absolute -m-16 lg:-ml-[71px] max-w-[150px]"
+                              className="dark:shadow-xl border-white dark:border-gray-800 rounded-full align-middle border-8 absolute -mt-[76px] lg:-ml-[71px] max-w-[150px]"
                             />
                           </div>
                         </div>

@@ -92,11 +92,11 @@ const ViewUsers = ({ props }) => {
       <div className="h-screen w-full">
         <div className="flex items-center justify-center min-h-screen from-gray-900 via-gray-900 to-gray-900 bg-gradient-to-br">
           {/* <div className=" h-[40rem] w-[60rem]"> */}
-            <div className=" h-3/4 md:h-1/2 w-3/4  relative max-w-8xl">
-              <div className="absolute inset-2 h-full w-full bg-gradient-to-r from-blue-500 to-teal-500 transform scale-[1.00] bg-red-500 rounded-full blur-3xl" />
+            <div className=" h-3/4 md:h-1/2 w-full relative max-w-8xl">
+              <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-blue-500 to-teal-500 transform scale-[1.00] bg-red-500 rounded-full blur-3xl" />
               <div className="relative w-[50%] mx-auto mt-6 break-words bg-white border shadow-2xl dark:bg-gray-800 dark:border-gray-700 rounded-xl">
                 <div className="flex flex-row">
-                  <div className="w-[35%] h-[100%]">
+                  <div className="w-[50%] h-[100%]">
                     <div className="bg-gray-800 border border-amber-400 rounded-lg text-center hover:shadow-lg align-center">
                       <div
                         className="justify-center flex bg-cover h-[450px] bg-center bg-no-repeat"
@@ -113,7 +113,7 @@ const ViewUsers = ({ props }) => {
                       </div>
                     </div>
                   </div>
-                  <div className="w-[65%]">
+                  <div className="w-[100%]">
                     <div className="h-[40%] ">
                       <div className="pt-6 mx-6 text-center border-t border-amber-400 dark:border-gray-700/50">
                         <div className="w-full flex flex-row mx-auto justify-end space-x-12 mr-32">
